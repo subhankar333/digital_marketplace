@@ -1,0 +1,49 @@
+{% extends 'myapp/base.html' %}
+{% block body %}
+
+   <div class="flex justify-between">
+      <div class="ml-20 mt-10 font-bold text-xl">My purchases</div>
+      <div class="ml-20 mt-10">
+        <a class="bg-green-500 text-white px-2 py-4 mr-8" href="{% url 'createproduct' %}">New product</a>
+      </div>
+   </div>
+
+   <div class="order-container shadow-lg p-10 m-5">
+    <div class="order-header flex  m-5 p-2">
+        <div class="w-1/4 font-bold">
+            Product name
+        </div>
+
+        <div class="w-1/4 font-bold">
+           Product price
+        </div>
+
+        <div class="w-1/4 font-bold">
+            Download link
+        </div>
+    </div>
+    {% for order in orders %}
+     <div class="flex  m-5 p-2 ">
+
+        <div class="w-1/4">
+            {{order.product.name}}
+        </div>
+
+        <div class="w-1/4 font-bold  text-green-500">
+            ₹{{order.amount}}
+        </div>
+
+        <div class="w-1/4">
+             <a class="bg-green-500 text-white px-4 py-2" href="{{order.product.url.file}}" download>Click here to download</a>
+        </div>
+         
+         
+
+     </div>
+     {% endfor %}
+
+
+   </div>
+
+ 
+{% endblock %}

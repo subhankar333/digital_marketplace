@@ -1,0 +1,46 @@
+{% extends 'myapp/base.html' %}
+{% block body %}
+
+ <div class="flex justify-between">
+
+    <div class="ml-10 mt-20 font-bold text-xl">Sales stats</div>
+    <div class="mr-20 mt-20">
+        <a class="bg-green-500 text-white px-2 py-4" href="{% url 'dashboard' %}">Dashboard</a>
+    </div>
+
+ </div>
+
+ <div class="shadow-lg p-10 m-5">
+    <div class="text-2xl font-bold">₹40000</div>
+    <div class="mt-10 font-semibold">Your Lifetime Revenue</div>
+ </div>
+
+ <div class="flex">
+
+    <div class="p-5 w-1/3">
+        <div class="shadow-lg p-10">
+            <div class="text-2xl font-bold">₹25000</div>
+            <div class="font-semibold">Yearly Sale</div>
+        </div>
+    </div>
+
+    <div class="p-5 w-1/3">
+        <div class="shadow-lg p-10">
+            <div class="text-2xl font-bold">₹2400</div>
+            <div class="font-semibold ">Monthly Sale</div>
+        </div>
+    </div>
+
+
+    <div class="p-5 w-1/3">
+        <div class="shadow-lg p-10">
+            <div class="text-2xl font-bold">₹600</div>
+            <div class="font-semibold ">Weekly Sale</div>
+        </div>
+    </div>
+
+
+ </div>
+
+   
+{% endblock %}
